@@ -1,0 +1,20 @@
+pair类模板：
+在头文件utility中，定义了一个类模板pair，其源代码如下所示：
+
+template <class T1, class T2>
+struct pair
+{
+	typedef T1 first_type;
+	typedef T2 second_type;
+
+	T1 first;
+	T2 second;
+	pair() : first(T1()), second(T2()) { }
+	pair(const T1& a, cons T2&b) : first(a), second(b) { }
+
+	#ifdef _STL_MEMBER_TEMPLATES
+	//允许使用兼容的pair进行复制构造
+	template <class U1, class U2>
+	pair(const pair<U1, U2>& p) : first(p.first), second(p.second) { }
+	#endif
+};

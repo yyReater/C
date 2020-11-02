@@ -1,0 +1,34 @@
+对于重抛异常，除了和原来相同的语法形式之外，还可以使用标准语法形式：
+
+throw;	//throw后没有异常值或异常对象
+
+若抛出的异常是类对象，则通常采用标准语法，例如定义异常类exception的派生类derive_exception，代码如下所示：
+
+class derive_execption: public exception
+{
+	...
+}
+
+在内层try结构中抛出派生类异常：
+
+try
+{
+	try
+	{
+		...
+		throw derive_execption();
+	}
+	catch (const exception&e)
+	{
+		cout << "Can not handle the execption" << endl;
+		throw e;	//重抛基类对象异常
+		//throw;	//采用标准语法重抛异常
+	}
+}
+catch (...)	//异常处理
+{
+	...
+	cout << "Handle execpion" << endl;
+}
+
+上诉代码中，内层的try结构内抛出了派生类对象异常，但接收异常的catch结构却使用了基类形参，catch结构中又将异常按照基类类型重新抛出，则会导致原有派生类异常对象的部分信息丢失。解决办法是，采用异常重抛的标准语法格式重抛异常。

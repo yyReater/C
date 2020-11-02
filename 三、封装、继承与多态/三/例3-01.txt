@@ -1,0 +1,22 @@
+class Animal                                               //定义基类
+{
+public:
+	Animal(int con_weight, int con_age):m_nWeight(con_weight),m_nAge(con_age)     //定义基类构造函数
+	{
+
+	}
+private:
+	int m_nWeight;
+	int m_nAge; 
+};
+
+class Cat :public Animal                                  //定义Animal的派生类Cat
+{
+public:
+	Cat(int weight, int age) :m_strName("Persian"), Animal(weight, age)      //定义派生类构造函数
+	{
+
+	}
+private:
+	string m_strName;                                    
+};

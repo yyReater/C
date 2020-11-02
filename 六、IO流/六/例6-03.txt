@@ -1,0 +1,28 @@
+在C++中，I/O的输入输出状态是通过每一个二进制位来设置的，ios基类为流定义了一组状态标志。如果设置了某个状态标志位，则对应位为1，否则为0.
+
+class ios_base
+{
+public:
+	//....
+	typedef implementation_defined1 fmtflags;
+	static const fmtflags
+		skipws,		//输出时跳过空白
+		left,		//输出左对齐
+		right,		//输出右对齐
+		internal,	//在符号和值之间填充
+		boolalpha,	//用符号形式表示真假
+		dec,		//以十进制输出
+		hex,		//以十六进制输出
+		oct,		//以八进制输出
+		scientific,	//用科学计数法输出浮点数
+		fixed,		//用定点数方式输出实数
+		showbase,	//输出前缀，八进制加0，十六进制加0x
+		showpoint,	//输出浮点数时总是带小数点
+		showpoa,	//输出正整数时加“+”
+		uppercase,	//输出十六进制是所有字母均用大学
+		adjustfield,	//与域调整基数有关的标志组
+		basefield,	//与整数基数有关的标志组
+		floatfield,	//与浮点数输出有关的标志组
+		unitbuf；	//每次输出操作之后刷新
+	//....
+}；

@@ -1,0 +1,21 @@
+提取运算符“>>”，又称输入运算符。Ｃ++的I/O流为了实现从流中提取数据，就在istream类中重载了“>>”运算符，istream类中共重载了“>>”运算符的18种形式，其成员函数原型如下：
+istream& operator>>(char*);
+inline istream& operator>>(unsigned char*);
+inline istream& operator>>(signed char*);
+istream& operator>>(char&);
+inline istream& operator>>(unsigned char&);
+inline istream& operator>>(signed char&);
+istream& operator>>(short&);
+istream& operator>>(unsigned short&);
+istream& operator>>(int&);
+istream& operator>>(unsigned int&);
+istream& operator>>(long&);
+istream& operator>>(unsigned long&);
+istream& operator>>(float&);
+istream& operator>>(double&);
+istream& operator>>(long double&);
+istream& operator>>(stream buf*);
+inline istream& operator>>(istream& (_cdecl*_f)(istream&));
+inline istream& operator>>(ios& (_cdecl*_f)(ios&));
+
+istream类重载了“>>”，那么istream类的对象cin便可直接调用该运算符进行一系列的输入操作，它从流中提取数据，将数据传送给cin对象。但“>>”运算符从流中提取数据时通常会跳过输入流中的空格、tab健、换行符等空白字符。

@@ -1,0 +1,22 @@
+插入运算符“<<”，又称输出运算符。Ｃ++的I/O流为了实现将数据插入到流中，就在ostream类中重载了“<<”运算符，ostream类中共重载了“<<”运算符的19种形式，其成员函数原型如下：
+ostream& operator<<(const char*);
+inline ostream& operator<<(const unsigned char*);
+inline ostream& operator<<(const signed char*);
+inline ostream& operator<<(char);
+ostream& operator<<(unsigned char);
+inline ostream& operator<<(signed char);
+ostream& operator<<(short);
+ostream& operator<<(unsigned short);
+ostream& operator<<(int);
+ostream& operator<<(unsigned int);
+ostream& operator<<(long);
+ostream& operator<<(unsigned long);
+inline ostream& operator<<(float);
+ostream& operator<<(double);
+ostream& operator<<(long double);
+ostream& operator<<(const void*);
+ostream& operator<<(stream buf);
+inline ostream& operator<<(ostream& (_cdecl*_f)(ostream&));
+inline ostream& operator<<(ios& (_cdecl*_f)(ios&));
+
+ostream类重载了“<<”，则ostream类的对象（cout、cerr、clog）便可直接调用该运算符进行一系列的输出操作。与“>>”运算符相比，“<<”运算符在输出数据时有很多格式控制细节。

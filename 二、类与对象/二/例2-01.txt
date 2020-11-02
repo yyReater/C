@@ -1,0 +1,31 @@
+/*test.h*/						//test.h文件
+#ifndef TEST_H
+#define TEST_H
+#include <iostream>
+using namespace std;
+
+class Test                                         //定义Test类
+{
+public:
+	Test() :m_nX(10){}
+	inline void print();                        //声明内联函数
+	void display(int y);
+private:
+	int m_nX;
+};
+void Test::print()                               //定义内联成员函数
+{
+	cout << m_nX << endl;
+}
+
+#endif
+
+
+/*test.cpp*/						//实现类中成员函数的.cpp文件
+#include <iostream>
+#include <test.h>
+using namespace std;
+void Test::display(int y)				定义普通成员函数
+{
+	cout << m_nX * y << endl;
+}
